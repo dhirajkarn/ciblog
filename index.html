@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Ciblog : My Personal Blog" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Ciblog</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/dhirajkarn/ciblog">View on GitHub</a>
+
+          <h1 id="project_title">Ciblog</h1>
+          <h2 id="project_tagline">My Personal Blog</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/dhirajkarn/ciblog/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/dhirajkarn/ciblog/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>Facebook PHP SDK (v.3.2.2)</p>
+
+<p>The <a href="http://developers.facebook.com/">Facebook Platform</a> is
+a set of APIs that make your app more social.</p>
+
+<p>This repository contains the open source PHP SDK that allows you to
+access Facebook Platform from your PHP app. Except as otherwise noted,
+the Facebook PHP SDK is licensed under the Apache Licence, Version 2.0
+(<a href="http://www.apache.org/licenses/LICENSE-2.0.html">http://www.apache.org/licenses/LICENSE-2.0.html</a>).</p>
+
+<h2>Usage</h2>
+
+<p>The <a href="http://github.com/facebook/facebook-php-sdk/blob/master/examples/example.php">examples</a> are a good place to start. The minimal you'll need to
+have is:</p>
+
+<pre><code>require 'facebook-php-sdk/src/facebook.php';
+
+$facebook = new Facebook(array(
+  'appId'  =&gt; 'YOUR_APP_ID',
+  'secret' =&gt; 'YOUR_APP_SECRET',
+));
+
+// Get User ID
+$user = $facebook-&gt;getUser();
+</code></pre>
+
+<p>To make <a href="http://developers.facebook.com/docs/api">API</a> calls:</p>
+
+<pre><code>if ($user) {
+  try {
+    // Proceed knowing you have a logged in user who's authenticated.
+    $user_profile = $facebook-&gt;api('/me');
+  } catch (FacebookApiException $e) {
+    error_log($e);
+    $user = null;
+  }
+}
+</code></pre>
+
+<p>Login or logout url will be needed depending on current user state.</p>
+
+<pre><code>if ($user) {
+  $logoutUrl = $facebook-&gt;getLogoutUrl();
+} else {
+  $loginUrl = $facebook-&gt;getLoginUrl();
+}
+</code></pre>
+
+<h2>Tests</h2>
+
+<p>In order to keep us nimble and allow us to bring you new functionality, without
+compromising on stability, we have ensured full test coverage of the SDK.
+We are including this in the open source repository to assure you of our
+commitment to quality, but also with the hopes that you will contribute back to
+help keep it stable. The easiest way to do so is to file bugs and include a
+test case.</p>
+
+<p>The tests can be executed by using this command from the base directory:</p>
+
+<pre><code>phpunit --stderr --bootstrap tests/bootstrap.php tests/tests.php
+</code></pre>
+
+<h1>Contributing</h1>
+
+<p>For us to accept contributions you will have to first have signed the
+<a href="https://developers.facebook.com/opensource/cla">Contributor License Agreement</a>.</p>
+
+<p>When commiting, keep all lines to less than 80 characters, and try to
+follow the existing style.</p>
+
+<p>Before creating a pull request, squash your commits into a single commit.</p>
+
+<p>Add the comments where needed, and provide ample explanation in the
+commit message.</p>
+
+<h1>Report Issues/Bugs</h1>
+
+<p><a href="https://developers.facebook.com/bugs">Bugs</a></p>
+
+<p><a href="http://facebook.stackoverflow.com">Questions</a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Ciblog maintained by <a href="https://github.com/dhirajkarn">dhirajkarn</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
