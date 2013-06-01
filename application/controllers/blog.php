@@ -25,6 +25,10 @@ class Blog extends CI_Controller {
         }
     }
 
+    function check_git() {
+        echo "success";
+    }
+
     function index($start=0) {
         $nav['links'] = $this->post->getLinks();
         $nav['display'] = 0;
